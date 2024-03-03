@@ -1,0 +1,16 @@
+configuration {
+  modes:              [ run ,window, windowcd ];
+  display-drun:       "";
+  display-run:        "";
+  show-icons:         false;
+  icon-theme: "Papirus-Apps";
+  terminal:           "kitty";
+  cycle:              false;
+  hide-scrollbar:     true;
+  disable-history:    false;
+  border:             none;
+  spacing:            2;
+}
+
+
+@theme "/usr/share/rofi/themes/squared-everforest.rasi"
