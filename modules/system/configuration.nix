@@ -15,7 +15,6 @@
       ../hardware/garbagecollector.nix
       ../pkgs/steam/steam.nix
       ../window-manager/hyprland
-      ../window-manager/wayland
 
     ];
 
@@ -23,11 +22,19 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true; 
-    devices = [ "nodev" ];
-    efiSupport = true;
-    useOSProber = true;
+  boot = {
+    initrd = {
+      kernelModules = [ "nvidia" ];
+      };
+      extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+      loader = {
+      grub = {
+        enable = true; 
+        devices = [ "nodev" ];
+        efiSupport = true;
+        useOSProber = true;
+        };
+      };
     };
 
   # Windows Dualboot Settings 
@@ -39,17 +46,19 @@
     # Enable Desktop Enviornments.
     desktopManager = {
       #xfce.enable = true;
-      plasma5.enable = true;
+      #plasma5.enable = true;
       #gnome.enable = true;
       #lxde.enable = true;
       };
       displayManager = {
-        sddm = { 
-          enable = true;
+      #  sddm = { 
+      #    enable = true;
 #          theme = "${import ../pkgs/sddm/sddm.nix { inherit pkgs; }}";
-        };
+      #  };
         #lightdm.enable = true;
-        #gdm.enable = true; 
+        gdm = {
+          enable = true;
+          wayland = true;
       };
     };
  
@@ -58,12 +67,6 @@
       enable = true;
     };
     
-    xdg = { 
-      portal = { 
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
-        enable = true; 
-      };
-    };
   #services.xserver.desktopManager.cde.enable = true;
   environment.etc = {
     "xdg/gtk-2.0/gtkrc".text = "gtk-error-bell=0";
