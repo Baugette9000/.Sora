@@ -5,6 +5,7 @@
   
   ./config/dunst/dunst.nix
   ./config/gtk/gtk.nix
+  ./config/pyprland/pyprland.nix
 
   ];
 

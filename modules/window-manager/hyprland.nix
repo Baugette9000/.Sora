@@ -29,7 +29,9 @@
       xdg-desktop-portal-gtk
       qt5.qtwayland
       qt6.qtwayland
-      wofi
+      rofi-wayland
+      waylock
+      pyprland
     ];
 
    environment.sessionVariables = {

@@ -13,7 +13,7 @@
       ../hardware/nvidia.nix
       ../hardware/openrgb.nix
       ../hardware/garbagecollector.nix
-      #../pkgs/steam/steam.nix
+      ../pkgs/steam/steam.nix
       ../window-manager/hyprland.nix
       ../pkgs/discord/discord.nix
 
@@ -204,25 +204,17 @@
     qt5.qtgraphicaleffects
     zoom-us
     vencord
-    #discord
-    #vesktop
-    #vencord-desktop
-    #webcord-vencord
     spotifyd
     ncspot
     spotify-tui
     git
     pciutils
     uutils-coreutils-noprefix
-    #coreutils-full
     toybox
-    #python311Packages.uptime
     pavucontrol
     htop
     tree
     kitty
-    rofi 
-    dmenu
     xfce.thunar
     neovim
     ranger
@@ -232,7 +224,6 @@
     cbonsai
     cmatrix  
     pipes
-    scrot
     acpi
     slstatus
     unixtools.top
@@ -244,8 +235,6 @@
     python3
     rustup
     rustc
-    libsForQt5.bismuth
-    libsForQt5.gwenview
     gparted 
     playerctl
     gccgo12
