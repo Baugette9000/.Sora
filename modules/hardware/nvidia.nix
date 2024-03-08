@@ -13,7 +13,7 @@
           vaapiVdpau
           libvdpau-va-gl
         ];
-        extraPackages32 = with pkgs.pkgsi686; [ libva ];
+        extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
         setLdLibraryPath = true;
       };
   
@@ -25,7 +25,7 @@
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    ForceFullCompositionPipeline = true; 
+    #ForceFullCompositionPipeline = true; 
     };
 
     services.xserver = {

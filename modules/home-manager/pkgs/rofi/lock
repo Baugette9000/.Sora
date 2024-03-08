@@ -1,0 +1,58 @@
+#!/bin/sh
+
+alpha='dd'
+background='#32302f'
+selection='#3c3836'
+comment='#504945'
+
+tan='#ebdbb2'
+yellow='#fabd2f'
+orange='#d79921'
+red='#fb4934'
+magenta='#d3869b'
+blue='#83a598'
+cyan='#458588'
+green='#b8bb26'
+
+
+i3lock \
+  --insidever-color=$selection \
+  --insidewrong-color=$background \
+  --inside-color=$selection \
+  --ringver-color=$magenta \
+  --ringwrong-color=$red \
+  --ringver-color=$magenta \
+  --ringwrong-color=$red\
+  --ring-color=$background \
+  --line-uses-ring \
+  --keyhl-color=$magenta \
+  --bshl-color=$orange \
+  --separator-color=$selection \
+  --verif-color=$magenta \
+  --wrong-color=$red \
+  --layout-color=$yellow \
+  --date-color=$selection \
+  --time-color=$tan \
+  --screen 1 \
+  --blur 17 \
+  --clock \
+  --indicator \
+  --time-str="%I:%M" \
+  --verif-text="Checking" \
+  --wrong-text="Wrong Input" \
+  --noinput="No Input" \
+  --lock-text="Locking..." \
+  --lockfailed="Lock Failed" \
+  --radius=120 \
+  --ring-width=16 \
+  --pass-media-keys \
+  --pass-volume-keys \
+  --nofork \
+  --show-failed-attempts \
+  --image ~/.dotfilesNix/suckless/dwm/scripts/Lock.png \
+  --time-font="JetBrainsMono Nerd Font" \
+  --date-font="JetBrainsMono Nerd Font" \
+  --layout-font="JetBrainsMono Nerd Font" \
+  --verif-font="JetBrainsMono Nerd Font" \
+  --wrong-font="JetBrainsMono Nerd Font" \
+  \

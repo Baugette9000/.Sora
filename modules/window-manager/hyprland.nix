@@ -1,12 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 {
 
   programs = {
     hyprland = {
       enable = true;
-      nvidiaPatches = true; 
+      enableNvidiaPatches = true; 
       xwayland = {
-        hidpi = true;
+        #hidpi = true;
         enable = true;
         };
       };
@@ -21,20 +21,20 @@
     environment.systemPackages = with pkgs; [
       grim
       slurp
+      swappy
       swww
-      xdg-desktop-portal-wayland
+      xdg-desktop-portal-hyprland
       xdg-utils
       xdg-desktop-portal 
       xdg-desktop-portal-gtk
       qt5.qtwayland
-      qt6.qtmake
       qt6.qtwayland
       wofi
     ];
 
-    environment.sessionVariables = {
-    POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-    GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
+   environment.sessionVariables = {
+    #POLKIT_AUTH_AGENT = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    #GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
     GBM_BACKEND = "nvidia-drm";
@@ -46,8 +46,8 @@
     _JAVA_AWT_WM_NONREPARENTING = "1";
     CLUTTER_BACKEND = "wayland";
     WLR_RENDERER = "vulkan";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
+#    XDG_CURRENT_DESKTOP = "Hyprland";
+#    XDG_SESSION_DESKTOP = "Hyprland";
     GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     };

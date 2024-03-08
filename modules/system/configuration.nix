@@ -13,21 +13,24 @@
       ../hardware/nvidia.nix
       ../hardware/openrgb.nix
       ../hardware/garbagecollector.nix
-      ../pkgs/steam/steam.nix
-      ../window-manager/hyprland
+      #../pkgs/steam/steam.nix
+      ../window-manager/hyprland.nix
+      ../pkgs/discord/discord.nix
 
     ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  #boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot = {
+    
+    boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd = {
       kernelModules = [ "nvidia" ];
       };
       extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
       loader = {
+	efi = {
+	 canTouchEfiVariables = true;
+	};
       grub = {
         enable = true; 
         devices = [ "nodev" ];
@@ -46,22 +49,18 @@
     # Enable Desktop Enviornments.
     desktopManager = {
       #xfce.enable = true;
-      #plasma5.enable = true;
+      plasma5.enable = true;
       #gnome.enable = true;
       #lxde.enable = true;
       };
-      displayManager = {
-      #  sddm = { 
-      #    enable = true;
-#          theme = "${import ../pkgs/sddm/sddm.nix { inherit pkgs; }}";
-      #  };
-        #lightdm.enable = true;
-        gdm = {
-          enable = true;
-          wayland = true;
+      displayManager.gdm = {
+      enable = true;
+      wayland = true;
       };
+      #displayManager.slim.enable = true;
+      #displayManager.sddm.enable = true;
+      #displayManager.lightdm.enable = true;
     };
- 
   # getting flatpak to work without plasma
     services.flatpak = {
       enable = true;
@@ -187,12 +186,13 @@
     devour
     pkg-config
     libnotify
-    dwmblocks
     polybar
     i3ipc-glib
     i3lock-color
     betterlockscreen
     floorp
+    discord
+    cava
   # firefox
     spicetify-cli
     spotify
@@ -203,7 +203,11 @@
     qt5.qtquickcontrols2   
     qt5.qtgraphicaleffects
     zoom-us
-    vesktop
+    vencord
+    #discord
+    #vesktop
+    #vencord-desktop
+    #webcord-vencord
     spotifyd
     ncspot
     spotify-tui
