@@ -46,13 +46,6 @@
     # X11.
     services.xserver = {
     enable = true;
-    # Enable Desktop Enviornments.
-    desktopManager = {
-      #xfce.enable = true;
-      plasma5.enable = true;
-      #gnome.enable = true;
-      #lxde.enable = true;
-      };
       displayManager.gdm = {
       enable = true;
       wayland = true;
@@ -200,6 +193,7 @@
     mpv
     ffmpeg
     cava
+    gnome.nautilus
   # firefox
     spicetify-cli
     spotify
