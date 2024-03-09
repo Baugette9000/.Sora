@@ -65,7 +65,11 @@
     services.flatpak = {
       enable = true;
     };
-    
+   
+  security.pam.services.gtklock = {};
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.xscreensaver.fprintAuth = true;
+  security.pam.services.xlock.fprintAuth = true;
   #services.xserver.desktopManager.cde.enable = true;
   environment.etc = {
     "xdg/gtk-2.0/gtkrc".text = "gtk-error-bell=0";
@@ -135,7 +139,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -191,7 +195,10 @@
     i3lock-color
     betterlockscreen
     floorp
-    discord
+    obs-studio-plugins.wlrobs
+    obs-studio
+    mpv
+    ffmpeg
     cava
   # firefox
     spicetify-cli
@@ -211,7 +218,8 @@
     pciutils
     uutils-coreutils-noprefix
     toybox
-    pavucontrol
+    pulsemixer
+    #pavucontrol
     htop
     tree
     kitty

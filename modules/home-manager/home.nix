@@ -41,7 +41,7 @@
   services.spotifyd = {
     enable = true;  
   };
-
+  
   home.file = {
   ".config/hypr/hyprland.conf".source = .././window-manager/hypr.conf;
   ".bashrc".source = ./pkgs/bash/.bashrc; 

@@ -2,7 +2,7 @@
 
 {
 environment.systemPackages = with pkgs; [
-	(pkgs.discord.override {
+	(pkgs.discord-ptb.override {
  	   withVencord = true;
 	})
     ];	

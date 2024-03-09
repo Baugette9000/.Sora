@@ -16,6 +16,7 @@
     in { 
     nixosConfigurations = {
       hardware.nvidia.enable = true;
+      security.pam.services.gtklock = {};
       nixos = lib.nixosSystem {
 	      inherit system;
 	        modules = [ ./modules/system/configuration.nix ];
@@ -24,6 +25,7 @@
 
     homeConfigurations = { 
       hardware.nvidia.enable = true;
+      security.pam.services.gtklock = {};
       cleo = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 	        modules = [ ./modules/home-manager/home.nix ];

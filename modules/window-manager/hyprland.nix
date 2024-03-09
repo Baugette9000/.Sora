@@ -27,11 +27,15 @@
       xdg-utils
       xdg-desktop-portal 
       xdg-desktop-portal-gtk
+      xwaylandvideobridge
+      xwayland
       qt5.qtwayland
       qt6.qtwayland
       rofi-wayland
-      waylock
       pyprland
+      gammastep
+      swayimg
+      gtklock
     ];
 
    environment.sessionVariables = {
@@ -60,6 +64,7 @@
         extraPortals = [ 
           pkgs.xdg-desktop-portal-gtk 
           pkgs.xdg-desktop-portal
+          pkgs.xdg-desktop-portal-wlr
         ]; 
       };
     };
