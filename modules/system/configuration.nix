@@ -194,6 +194,7 @@
     ffmpeg
     cava
     gnome.nautilus
+    polkit_gnome
   # firefox
     spicetify-cli
     spotify
